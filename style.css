@@ -1,0 +1,136 @@
+/* Basic page styling */
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: #1a1a2e; /* Dark background */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#controls {
+    margin-bottom: 30px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #e94560;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* --- THE CARD 3D FLIP STYLES --- */
+
+/* The scene gives the 3D space depth */
+.card-scene {
+    width: 250px;
+    height: 400px;
+    perspective: 1000px; /* How extreme the 3D effect is */
+}
+
+/* The card itself */
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d; /* Keeps child elements in 3D space */
+    cursor: pointer;
+}
+
+/* This class gets added by JavaScript when we click */
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+/* The faces of the card */
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides the back of the element when flipped */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Styling the Back (Face Down) */
+.card-back {
+    background: linear-gradient(135deg, #0f3460, #1a1a2e);
+    border: 2px solid #e94560;
+}
+
+.card-back-pattern {
+    font-size: 60px;
+}
+
+/* Styling the Front (Face Up) */
+.card-front {
+    background-color: #f4f4f4;
+    color: #333;
+    transform: rotateY(180deg); /* Start the front flipped around */
+}
+
+#card-title {
+    margin-top: 0;
+    color: #e94560;
+}
+
+/* --- CUSTOM CARD FORM STYLES --- */
+#add-card-form {
+    margin-top: 40px;
+    background-color: #24243e;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+#add-card-form h3 {
+    margin: 0 0 10px 0;
+    color: #e94560;
+}
+
+input[type="text"], textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: inherit;
+}
+
+input[type="file"] {
+    font-size: 14px;
+    color: #fff;
+}
+
+#add-card-btn {
+    background-color: #0f3460;
+    margin: 10px 0 0 0;
+}
+
+/* Update the image style so it looks like a portrait inset */
+#card-image {
+    width: 120px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px; /* Slightly rounded corners instead of a full circle */
+    margin-bottom: 10px;
+    border: 2px solid #e94560;
+}

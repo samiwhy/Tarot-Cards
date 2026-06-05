@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Custom Tarot Deck</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>🔮 Custom Tarot Reading</h1>
+    
+    <div id="controls">
+        <button id="draw-btn">Draw a Card</button>
+        <button id="shuffle-btn">Shuffle Deck</button>
+    </div>
+
+    <div class="card-scene">
+        <div class="card" id="tarot-card">
+            <div class="card-face card-back">
+                <div class="card-back-pattern">🔮</div>
+            </div>
+            
+            <div class="card-face card-front">
+                <img id="card-image" src="" style="display: none;">
+                <h2 id="card-title">Deck Ready</h2>
+                <p id="card-explanation">Shuffle the deck and draw a card to begin.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
